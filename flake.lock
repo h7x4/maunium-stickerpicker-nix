@@ -1,0 +1,43 @@
+{
+  "nodes": {
+    "maunium-stickerpicker": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1668509918,
+        "narHash": "sha256-5Kbok9vJIlOti+ikpJXv2skdADhQQTjX5mVmBTM0wGU=",
+        "owner": "maunium",
+        "repo": "stickerpicker",
+        "rev": "f59406a47a6778cd402e656ffb64f667335f665a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "maunium",
+        "repo": "stickerpicker",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1672441588,
+        "narHash": "sha256-jx5kxOyeObnVD44HRebKYL3cjWrcKhhcDmEYm0/naDY=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "6a0d2701705c3cf6f42c15aa92b7885f1f8a477f",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "ref": "nixos-22.11",
+        "type": "indirect"
+      }
+    },
+    "root": {
+      "inputs": {
+        "maunium-stickerpicker": "maunium-stickerpicker",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
