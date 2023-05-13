@@ -32,13 +32,31 @@ in {
   chatsticker-deps = with pkgs; [ wget html-xml-utils ];
   chatsticker-build = { name, id ? "", title ? "", ... }: baseFetcher {
     inherit id title;
-    type = "chatstickers";
+    type = "chatsticker";
     dir = name;
     instructions = ''
       wget "https://chatsticker.com/sticker/${name}" -O raw.html
       hxnormalize -l 240 -x raw.html > normalized.html
       cat normalized.html | hxselect -s '\n' -c ".img-fluid::attr(src)" > images.txt;
       sed -i 's|;compress=true||' images.txt
+
+      for url in $(cat images.txt); do
+        wget $url
+      done
+
+      rm raw.html normalized.html images.txt
+    '';
+  };
+
+  stickers-cloud-deps = with pkgs; [ wget html-xml-utils ];
+  stickers-cloud-build = { name, id ? "", title ? "", ... }: baseFetcher {
+    inherit id title;
+    type = "stickers-cloud";
+    dir = name;
+    instructions = ''
+      wget "https://stickers.cloud/en/pack/${name}" -O raw.html
+      hxnormalize -l 240 -x raw.html > normalized.html
+      cat normalized.html | hxselect -s '\n' -c "img.d-block.image-ratio::attr(src)" > images.txt;
 
       for url in $(cat images.txt); do
         wget $url
