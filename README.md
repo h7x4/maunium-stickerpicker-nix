@@ -70,4 +70,7 @@ services.maunium-stickerpicker = {
 };
 ```
 
+The stickerpicker should now be hosted on `https://matrix-stickerpacks.myserver.com/stickerpicker/`.
+See [upstream docs](https://github.com/maunium/stickerpicker/wiki/Enabling-the-widget) for how to enable the widget in your client.
+
 [maunium-stickerpicker]: https://github.com/maunium/stickerpicker
